@@ -9,7 +9,8 @@ RUN pacman -Syu --noconfirm \
     && bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3 \
     && rm -rf ~/miniconda3/miniconda.sh \
     && ~/miniconda3/bin/conda init --all --system \
-    && mkdir /pyenv \
-    && ~/miniconda3/bin/conda install -p /pyenv/ python=3.11 \
     && ~/miniconda3/bin/conda update --all \
+    && ~/miniconda3/bin/conda create -n pyenv python=3.11 \
+    && ~/miniconda3/bin/conda activate pyenv
+    && pip install -U pip wheel setuptools
     && usermod -s /usr/bin/fish root
