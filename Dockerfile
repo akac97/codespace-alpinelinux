@@ -1,7 +1,5 @@
-# Use Arch Linux base image
 FROM archlinux:base-devel
 
-# Update the system and install necessary packages
 RUN pacman -Syu --noconfirm \
     && pacman -S git git-lfs nano fish bash wget curl --noconfirm \
     && mkdir -p ~/miniconda3 \
@@ -12,5 +10,4 @@ RUN pacman -Syu --noconfirm \
     && ~/miniconda3/bin/conda update --all \
     && ~/miniconda3/bin/conda create -n pyenv python=3.11 \
     && ~/miniconda3/bin/conda activate pyenv \
-    && pip install -U pip wheel setuptools \
     && usermod -s /usr/bin/fish root
