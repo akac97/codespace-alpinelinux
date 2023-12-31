@@ -9,5 +9,5 @@ RUN pacman -Syu --noconfirm \
     && ~/miniconda3/bin/conda init --all --system \
     && ~/miniconda3/bin/conda update --all \
     && ~/miniconda3/bin/conda create -n pyenv python=3.11 \
-    && ~/miniconda3/bin/conda activate pyenv \
+    && ~/miniconda3/bin/conda run -n pyenv bash -c "pip install -U pip wheel setuptools" \
     && usermod -s /usr/bin/fish root
