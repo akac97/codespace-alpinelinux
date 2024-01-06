@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-RUN apk update 
+RUN apk update \ 
     && apk upgrade \
     && apk add git git-lfs nano fish bash wget curl neovim python3 \
     && python3 -m pip config set global.require-virtualenv False \
