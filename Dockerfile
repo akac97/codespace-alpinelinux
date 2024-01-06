@@ -1,7 +1,7 @@
-FROM archlinux:base-devel
+FROM alpine:latest
 
-RUN pacman -Syu --noconfirm \
-    && pacman -S git git-lfs nano fish bash wget curl --noconfirm \
+RUN apk update && apk upgrade \
+    && apk add git git-lfs nano fish bash wget curl gcompat \
     && mkdir -p ~/miniconda3 \
     && wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh \
     && bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3 \
