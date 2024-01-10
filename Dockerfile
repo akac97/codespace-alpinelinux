@@ -14,6 +14,7 @@ RUN apk update && \
     ./install --noninteractive && \
     rm install && \
     fish -c "omf install bass" && \
+    mkdir /root/.config/fish/functions/ && \
     echo '# ~/.config/fish/functions/nvm.fish' > ~/.config/fish/functions/nvm.fish && \
     echo 'function nvm' >> ~/.config/fish/functions/nvm.fish && \
     echo '  # Insert nvm function content here' >> ~/.config/fish/functions/nvm.fish && \
