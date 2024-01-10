@@ -10,6 +10,7 @@ RUN apk update && \
     sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim' && \
     curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install -o install && \
+    chmod +x install && \
     ./install --noninteractive && \
     rm install && \
     usermod -s /usr/bin/fish root
