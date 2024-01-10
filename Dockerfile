@@ -11,7 +11,7 @@ RUN apk update && \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim && \
     curl -Lo install https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install && \
     chmod +x install && \
-    ./install --noninteractive && \
+    fish -c "./install --noninteractive" && \
     rm install && \
     fish -c "omf install bass" && \
     mkdir /root/.config/fish/functions/ && \
@@ -29,6 +29,6 @@ RUN apk update && \
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash && \
     fish -c "nvm install node" && \
     fish -c "nvm use node" && \
-    npm update -g npm && \
-    npm update -g && \
+    fish -c "npm update -g npm" && \
+    fish -c "npm update -g" && \
     usermod -s /usr/bin/fish root
