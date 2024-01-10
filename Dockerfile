@@ -27,4 +27,8 @@ RUN apk update && \
     echo '# ~/.config/fish/config.fish' > ~/.config/fish/config.fish && \
     echo 'load_nvm > /dev/stderr' >> ~/.config/fish/config.fish && \
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash && \
+    nvm install node && \
+    nvm use node && \
+    npm update -g npm && \
+    npm update -g && \
     usermod -s /usr/bin/fish root
