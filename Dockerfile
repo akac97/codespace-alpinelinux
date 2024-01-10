@@ -2,7 +2,7 @@ FROM alpine:latest
 
 RUN apk update && \
     apk upgrade && \
-    apk add git git-lfs nano fish bash wget curl neovim python3 py3-pip shadow gcc g++ make && \
+    apk add git git-lfs nano fish bash wget curl neovim python3 py3-pip shadow gcc g++ make ca-certificates && \
     mkdir -p ~/.config/pip && \
     echo "[global]" >> ~/.config/pip/pip.conf && \
     echo "break-system-packages = true" >> ~/.config/pip/pip.conf && \
