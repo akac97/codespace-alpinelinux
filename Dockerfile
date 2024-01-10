@@ -7,9 +7,9 @@ RUN apk update && \
     echo "[global]" >> ~/.config/pip/pip.conf && \
     echo "break-system-packages = true" >> ~/.config/pip/pip.conf && \
     python3 -m pip install -U pip wheel setuptools && \
-    sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim' && \
-    curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install -o install && \
+    curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim && \
+    curl -Lo install https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install && \
     chmod +x install && \
     ./install --noninteractive && \
     rm install && \
