@@ -20,7 +20,7 @@ RUN apk update && \
     curl -o /root/.config/fish/functions/load_nvm.fish https://raw.githubusercontent.com/akac97/codespace-alpinelinux/main/load_nvm.fish && \
     echo 'load_nvm > /dev/stderr' >> ~/.config/fish/config.fish && \
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash && \
-    fish -c "nvm install node -j$(nproc)" && \
+    fish -c "nvm install node" && \
     fish -c "nvm use node" && \
     fish -c "npm update -g npm" && \
     fish -c "npm update -g" && \
