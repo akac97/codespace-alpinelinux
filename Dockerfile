@@ -24,4 +24,5 @@ RUN apk update && \
     fish -c "nvm use node" && \
     fish -c "npm update -g npm" && \
     fish -c "npm update -g" && \
+    fish -c "nvm cache clear" && \
     usermod -s /usr/bin/fish root
