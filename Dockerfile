@@ -15,9 +15,9 @@ RUN apk update && \
     rm install && \
     fish -c "omf install bass" && \
     mkdir /root/.config/fish/functions/ && \
-    COPY nvm.fish /root/.config/fish/functions/nvm.fish && \
-    COPY nvm_find_nvmrc.fish /root/.config/fish/functions/ && \
-    COPY load_nvm.fish /root/.config/fish/functions/ && \
+    COPY nvm.fish /root/.config/fish/functions/
+    COPY nvm_find_nvmrc.fish /root/.config/fish/functions/
+    COPY load_nvm.fish /root/.config/fish/functions/
     echo 'load_nvm > /dev/stderr' >> ~/.config/fish/config.fish && \
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash && \
     fish -c "nvm install node" && \
