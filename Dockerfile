@@ -2,7 +2,7 @@ FROM alpine:latest
 
 RUN apk update && \
     apk upgrade && \
-    apk add -U git git-lfs nano fish bash wget curl neovim python3 py3-pip shadow gcc g++ make ca-certificates openssl ncurses coreutils libgcc linux-headers grep util-linux binutils findutils && \
+    apk add git git-lfs nano fish bash wget curl neovim python3 py3-pip shadow gcc g++ make ca-certificates openssl ncurses coreutils libgcc linux-headers grep util-linux binutils findutils && \
     mkdir -p ~/.config/pip && \
     echo "[global]" >> ~/.config/pip/pip.conf && \
     echo "break-system-packages = true" >> ~/.config/pip/pip.conf && \
@@ -14,10 +14,10 @@ RUN apk update && \
     fish -c "./install --noninteractive" && \
     rm install && \
     fish -c "omf install bass" && \
-    mkdir /root/.config/fish/functions/ && \
-    COPY nvm.fish /root/.config/fish/functions/
-    COPY nvm_find_nvmrc.fish /root/.config/fish/functions/
-    COPY load_nvm.fish /root/.config/fish/functions/
+    mkdir -p /root/.config/fish/functions/ && \
+    curl -o /root/.config/fish/functions/nvm.fish https://raw.githubusercontent.com/akac97/codespace-alpinelinux/main/nvm.fish && \
+    curl -o /root/.config/fish/functions/nvm_find_nvmrc.fish https://raw.githubusercontent.com/akac97/codespace-alpinelinux/main/nvm_find_nvmrc.fish && \
+    curl -o /root/.config/fish/functions/load_nvm.fish https://raw.githubusercontent.com/akac97/codespace-alpinelinux/main/load_nvm.fish && \
     echo 'load_nvm > /dev/stderr' >> ~/.config/fish/config.fish && \
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash && \
     fish -c "nvm install node" && \
